@@ -6,6 +6,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import PageSection from "../../components/page-section";
+import Seo from "../../components/seo";
 
 const applyErrorTemplate = function (index, subtitle, before, code, after) {
     return (
@@ -49,6 +50,7 @@ const Template = ({data}) => {
     const {markdownRemark: {frontmatter: {sections, ...frontmatter}, html, parent: {relativePath}}} = data
     const className = slugify(relativePath);
     return <Layout>
+        <Seo title={frontmatter.title}/>
         <PageSection className={className} {...frontmatter}>
             <div dangerouslySetInnerHTML={{__html: html}}/>
             {sections && <div className="subsections">

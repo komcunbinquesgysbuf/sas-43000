@@ -1,12 +1,3 @@
-exports.createPages = async ({ actions }) => {
-    const {createPage} = actions
-    createPage({
-        path: "/using-dsg",
-        component: require.resolve("./src/templates/using-dsg.js"),
-        context: {},
-        defer: true,
-    })
-};
 exports.createResolvers = ({createResolvers}) => {
     const makeFileResolver = (sourceInstances, field, removeSubstring) =>
         (source, args, context, info) => {

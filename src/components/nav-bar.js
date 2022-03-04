@@ -33,8 +33,6 @@ export default function NavBar() {
         <ul className="pages">
             <li><Link activeClassName='active' title={itemTitle(childListsYaml)} to={itemUrl(childListsYaml)}>{itemLinkTitle(childListsYaml)}</Link></li>
             {(childListsYaml.submenu || []).map(item => <li key={itemUrl(item)}><Link activeClassName='active' title={itemTitle(item)} to={itemUrl(item)}>{itemLinkTitle(item)}</Link></li>)}
-            <li><Link activeClassName='active' to="/app/profile" className="icon" title=" Retailers">🏬</Link></li>
-            <li><a href="/admin" title=" Editors">📝</a></li>
         </ul>
         <ul className="other-languages">
             <li><Link activeClassName='active' title="Deutsch" to="/using-dsg">de</Link></li>
