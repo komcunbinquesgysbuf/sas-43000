@@ -35,7 +35,7 @@ sections:
   templates:
   - list
 upload_dir: src/images
-public_path: "/ckzmnri0c000ipj862t51ivd1"
+public_path: "/media-t51ivd"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":year:-:month:/:filename:"

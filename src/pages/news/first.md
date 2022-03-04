@@ -1,9 +1,9 @@
 ---
 title: first
-image: "/ckzmnri0c000ipj862t51ivd1/gatsby-astronaut.png"
+image: "/media-t51ivd/gatsby-astronaut.png"
 sections:
 - template: include
   file: src/articles/second.md
 
 ---
-![](/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png)
+![](/media-t51ivd/gatsby-icon.png)

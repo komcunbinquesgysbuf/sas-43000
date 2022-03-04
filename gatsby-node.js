@@ -22,18 +22,18 @@ exports.createResolvers = ({createResolvers}) => {
             file: {type: "File", resolve: makeFileResolver('pages', 'file', /^src\/pages\//)},
         },
         MarkdownRemarkFrontmatter: {
-            image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/ckzmnri0c000ipj862t51ivd1\//)},
+            image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/media-t51ivd\//)},
             gallery: {
                 type: "[File!]",
-                resolve: makeFileResolver('images', 'gallery', /^\/ckzmnri0c000ipj862t51ivd1\//)
+                resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)
             },
         },
         MarkdownRemarkFrontmatterSections: {
             file: {type: "File", resolve: makeFileResolver('articles|pages', 'file', /^src\/(articles|pages)\//)},
-            image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/ckzmnri0c000ipj862t51ivd1\//)},
+            image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/media-t51ivd\//)},
             gallery: {
                 type: "[File!]",
-                resolve: makeFileResolver('images', 'gallery', /^\/ckzmnri0c000ipj862t51ivd1\//)
+                resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)
             },
         },
     });

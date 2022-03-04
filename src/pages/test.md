@@ -1,6 +1,6 @@
 ---
 title: test
-image: "/ckzmnri0c000ipj862t51ivd1/gatsby-astronaut.png"
+image: "/media-t51ivd/gatsby-astronaut.png"
 
 ---
 # Test

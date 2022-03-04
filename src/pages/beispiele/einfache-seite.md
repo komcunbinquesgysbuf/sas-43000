@@ -5,9 +5,9 @@ subtitle: mit allen verfügbaren Feldern
 isArticle: true
 author: Alice
 gallery:
-- "/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png"
-- "/ckzmnri0c000ipj862t51ivd1/gatsby-astronaut.png"
-image: "/ckzmnri0c000ipj862t51ivd1/gatsby-astronaut.png"
+- "/media-t51ivd/gatsby-icon.png"
+- "/media-t51ivd/gatsby-astronaut.png"
+image: "/media-t51ivd/gatsby-astronaut.png"
 
 ---
 # Einfache Seite
@@ -28,7 +28,7 @@ Dieses Beispiel einer einfachen Seite beinhaltet alle möglichen Frontmatter-Fel
 
 [Externer](https://wikipedia.org/ "Wikipedia")/[interner](/app/profile "Profilseite") Link
 
-![Gatsby Astronaut](/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png)
+![Gatsby Astronaut](/media-t51ivd/gatsby-icon.png)
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo, sapien et facilisis commodo, quam lacus rutrum velit, eu egestas felis nulla vitae risus. Suspendisse id risus id nisl euismod sollicitudin vel vitae dui. Praesent ornare urna nulla, ut congue arcu tincidunt at. Sed volutpat faucibus ante, sit amet imperdiet augue gravida eget. Integer pretium bibendum felis, in ornare mi rhoncus sed.
 

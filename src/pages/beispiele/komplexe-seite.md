@@ -4,20 +4,20 @@ title: Komplexe Seite
 subtitle: mit allen verfügbaren Feldern
 isArticle: true
 author: Bob
-image: "/ckzmnri0c000ipj862t51ivd1/gatsby-astronaut.png"
+image: "/media-t51ivd/gatsby-astronaut.png"
 sections:
 - template: section
   title: Einleitender Abschnitt
   subtitle: Irgendwo muss man schließlich anfangen
-  gallery: ["/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png"]
-  image: "/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png"
+  gallery: ["/media-t51ivd/gatsby-icon.png"]
+  image: "/media-t51ivd/gatsby-icon.png"
   content: "# Komplexe Seite\n\nDieses Beispiel einer komplexen Seite beinhaltet alle
     möglichen Frontmatter-Felder und alle drei Abschnittsarten. Im folgenden Text
     nutzt es die verfügbaren Formatierungsmöglichkeiten aus.\n\n## Überschrift 2\n\n###
     Überschrift 3\n\n#### Überschrift 4\n\n##### Überschrift 5\n\n###### Überschrift
     6\n\n**Fetter** oder _kursiver_ Text, oder **_beides_**.\n\n[Externer](https://wikipedia.org/
     \"Wikipedia\")/[interner](https://github.com/komcunbinquesgysbuf/mwn-43012/blob/main/app/profile
-    \"Profilseite\") Link\n\n[![Gatsby Astronaut](https://github.com/komcunbinquesgysbuf/mwn-43012/raw/main/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png)](https://github.com/komcunbinquesgysbuf/mwn-43012/blob/main/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png)\n\n>
+    \"Profilseite\") Link\n\n[![Gatsby Astronaut](https://github.com/komcunbinquesgysbuf/mwn-43012/raw/main/media-t51ivd/gatsby-icon.png)](https://github.com/komcunbinquesgysbuf/mwn-43012/blob/main/media-t51ivd/gatsby-icon.png)\n\n>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo, sapien et
     facilisis commodo, quam lacus rutrum velit, eu egestas felis nulla vitae risus.
     Suspendisse id risus id nisl euismod sollicitudin vel vitae dui. Praesent ornare
@@ -31,7 +31,7 @@ sections:
     Sed nulla arcu\n2. ullamcorper in ex nec\n3. dignissim ultrices neque\n4. Aliquam
     non vestibulum tellus"
 - template: image
-  image: "/ckzmnri0c000ipj862t51ivd1/gatsby-icon.png"
+  image: "/media-t51ivd/gatsby-icon.png"
   title: Gatsby Icon
 - template: include
   file: src/articles/beispiel-inhaltselement.md
