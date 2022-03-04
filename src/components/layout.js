@@ -2,20 +2,15 @@ import React from "react"
 import NavBar from "./nav-bar"
 import "./layout.css";
 import {Link} from "gatsby";
-import {getUser} from "../services/auth";
 
 const Layout = ({children}) => {
-    const user = getUser();
-    const greetingMessage = user
-        ? `Hello ${user.salutation || user.first_name || ''} ${user.last_name}`
-        : "You are not logged in";
     return <div className='page'>
         <div className="header" role="banner">
             <div className="sitename">
                 <h1><a href="/"><i className="sitename-logo"></i>Exampl Ltd.</a></h1>
             </div>
             <div className="sitename-banner"></div>
-            <div className="navigation-banner">{greetingMessage}</div>
+            <div className="navigation-banner"></div>
             <NavBar/>
         </div>
         <div className="content">

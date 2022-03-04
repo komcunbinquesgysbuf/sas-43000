@@ -1,6 +1,5 @@
 import React from "react"
-import {graphql, Link, navigate, useStaticQuery} from "gatsby"
-import {getUser, logout} from "../services/auth"
+import {graphql, Link, useStaticQuery} from "gatsby"
 
 export default function NavBar() {
     const {file: {childListsYaml}} = useStaticQuery(graphql`
@@ -21,11 +20,6 @@ export default function NavBar() {
             }
         }
     `)
-    const user = getUser();
-    const onLogout = event => {
-        event.preventDefault();
-        logout(() => navigate(`/app/login`))
-    };
     const itemTitle = (item) => item.file.childMarkdownRemark?.frontmatter.title || '';
     const itemLinkTitle = (item) => item.title || itemTitle(item);
     const itemUrl = (item) => `/${item.file.relativePath.replace(/\.\w+$/, '')}`;
@@ -40,7 +34,6 @@ export default function NavBar() {
             <li><Link activeClassName='active' title={itemTitle(childListsYaml)} to={itemUrl(childListsYaml)}>{itemLinkTitle(childListsYaml)}</Link></li>
             {(childListsYaml.submenu || []).map(item => <li key={itemUrl(item)}><Link activeClassName='active' title={itemTitle(item)} to={itemUrl(item)}>{itemLinkTitle(item)}</Link></li>)}
             <li><Link activeClassName='active' to="/app/profile" className="icon" title=" Retailers">🏬</Link></li>
-            {user ? <li><a href="/" onClick={onLogout}>Logout</a></li> : null}
             <li><a href="/admin" title=" Editors">📝</a></li>
         </ul>
         <ul className="other-languages">

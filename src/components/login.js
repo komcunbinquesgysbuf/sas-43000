@@ -1,6 +1,4 @@
 import React, {useState} from "react"
-import {navigate} from "gatsby"
-import {performLogin} from "../services/auth"
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -8,10 +6,6 @@ const Login = () => {
     const [error, setError] = useState(false);
     const handleSubmit = event => {
         event.preventDefault()
-        performLogin(username, password).then(
-            () => navigate(`/app/profile`),
-            () => setError(true)
-        )
     }
     return <>
         <h1>Log in</h1>
