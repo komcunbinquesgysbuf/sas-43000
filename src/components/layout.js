@@ -1,24 +1,70 @@
 import React from "react"
 import NavBar from "./nav-bar"
 import {Link} from "gatsby";
+import "../css/typography.css";
+import styled, {createGlobalStyle} from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+    html {
+        --ink: #222222;
+        --paper: #eeeeee;
+        --cyan: #00afc4;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        border: 0 none;
+    }
+    body {
+        background-color: var(--paper);
+        color: var(--ink);
+        font-family: "Latina", sans-serif;
+    }
+    pre, code {
+        font-family: "JetBrains", monospace;
+    }
+    blockquote, dd, div, dl, dt, figcaption, figure, hr, menu, ol, p, pre, ul {
+        margin: 1rem 0;
+    }
+    ol ol, ol ul, ul ol, ul ul {
+        margin: 0;
+    }
+    li {
+        margin: 0 0 0 1.1rem;
+    }
+    a[href] {
+        color: var(--cyan);
+    }
+`
+const Header = styled.header`
+    border: 1px dashed #f00;
+    margin: 1rem;
+`;
+const Main = styled.main`
+    border: 1px dashed #0f0;
+    margin: 1rem;
+`;
+const Footer = styled.footer`
+    border: 1px dashed #00f;
+    margin: 1rem;
+`;
 
 const Layout = ({children}) => {
-    return <div className='page'>
-        <div className="header" role="banner">
+    return <>
+        <GlobalStyle/>
+        <Header>
             <div className="sitename">
                 <h1><a href="/"><i className="sitename-logo"></i>Exampl Ltd.</a></h1>
             </div>
             <div className="sitename-banner"></div>
             <div className="navigation-banner"></div>
             <NavBar/>
-        </div>
-        <div className="content">
-            <div className="main" role="main">
-                <h1>#</h1>
-                {children}
-            </div>
-        </div>
-        <div className="footer" role="contentinfo">
+        </Header>
+        <Main>
+            <h1>#</h1>
+            {children}
+        </Main>
+        <Footer>
             <div className="siteinfo">
                 <div className="notice1">
                     <p>Example Ltd.<br/>27 Nowhere Ave.<br/>Far far Away<br/>3FF6SE</p>
@@ -39,8 +85,8 @@ const Layout = ({children}) => {
                 <p>This website does not use any cookies and does not attempt to track you in any way.</p>
             </div>
             <div className="siteinfo-banner"></div>
-        </div>
-    </div>;
+        </Footer>
+    </>;
 };
 
 export default Layout

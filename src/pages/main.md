@@ -17,3 +17,28 @@ author: Charlotte
 date: '2022-02-18'
 
 ---
+
+0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+äåéëþüúíóöáßðfghïœøæœ©®bñµÄÅÉËÞÜÚÍÓÖÁ§ÐFGHÏŒØÆŒ¢®BÑµ
+ff fi fl
+`-=[];'\,./~!@#$%^&*()_+{}:"|<>?¹²³¤€¥×«»¶¬ç¿¡£¼½¾÷“”°¦Ç
+
+- This is
+    - a nested
+    - list with even
+        - more nesting
+        - inside
+    - but then
+    - it breaks
+- out
+- again
+
+1. This is
+    1. a nested
+    1. list with even
+        1. more nesting
+        1. inside
+    1. but then
+    1. it breaks
+1. out
+1. again
