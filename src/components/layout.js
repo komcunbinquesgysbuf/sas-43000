@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     pre, code {
         font-family: "JetBrains", monospace;
     }
-    blockquote, dd, div, dl, dt, figcaption, figure, hr, menu, ol, p, pre, ul {
+    blockquote, dl, figure, hr, menu, ol, p, pre, table, ul {
         margin: 1rem 0;
     }
     ol ol, ol ul, ul ol, ul ul {
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
     a[href] {
         color: var(--cyan);
     }
-`
+`;
 const Header = styled.header`
     border: 1px dashed #f00;
     margin: 1rem;
