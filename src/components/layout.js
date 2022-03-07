@@ -30,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
     }
     li {
-        margin: 0 0 0 1.1rem;
+        margin-left: 1.5rem;
+        padding-left: .2rem;
     }
     a[href] {
         color: var(--cyan);
