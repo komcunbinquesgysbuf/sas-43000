@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Latina";
+    font-weight: 700;
+    src: url("../fonts/LatinaEssential-Bold.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-Bold.woff") format("woff"),
+        url("../fonts/LatinaEssential-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 700;
+    font-style: italic;
+    src: url("../fonts/LatinaEssential-BoldIt.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-BoldIt.woff") format("woff"),
+        url("../fonts/LatinaEssential-BoldIt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 900;
+    src: url("../fonts/LatinaEssential-Heavy.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-Heavy.woff") format("woff"),
+        url("../fonts/LatinaEssential-Heavy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 900;
+    font-style: italic;
+    src: url("../fonts/LatinaEssential-HeavyIt.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-HeavyIt.woff") format("woff"),
+        url("../fonts/LatinaEssential-HeavyIt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 300;
+    src: url("../fonts/LatinaEssential-Light.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-Light.woff") format("woff"),
+        url("../fonts/LatinaEssential-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 300;
+    font-style: italic;
+    src: url("../fonts/LatinaEssential-LightIt.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-LightIt.woff") format("woff"),
+        url("../fonts/LatinaEssential-LightIt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 500;
+    src: url("../fonts/LatinaEssential-Medium.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-Medium.woff") format("woff"),
+        url("../fonts/LatinaEssential-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Latina";
+    font-weight: 500;
+    font-style: italic;
+    src: url("../fonts/LatinaEssential-MediumIt.eot") format("embedded-opentype"),
+        url("../fonts/LatinaEssential-MediumIt.woff") format("woff"),
+        url("../fonts/LatinaEssential-MediumIt.woff2") format("woff2");
+}
