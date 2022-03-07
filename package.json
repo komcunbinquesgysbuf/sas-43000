@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.5.2",
     "gatsby-plugin-gatsby-cloud": "^4.5.1",
     "gatsby-plugin-image": "^2.5.1",
@@ -12,6 +13,7 @@
     "gatsby-plugin-offline": "^5.5.1",
     "gatsby-plugin-react-helmet": "^5.5.0",
     "gatsby-plugin-sharp": "^4.5.1",
+    "gatsby-plugin-styled-components": "^5.9.0",
     "gatsby-remark-images": "^6.7.0",
     "gatsby-source-filesystem": "^4.5.1",
     "gatsby-transformer-remark": "^5.7.0",
@@ -25,6 +27,7 @@
     "rehype-stringify": "^9.0.3",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
+    "styled-components": "^5.3.3",
     "traverse": "^0.6.6",
     "unified": "^10.1.1",
     "unist-util-visit": "^2.0.3"
