@@ -65,3 +65,29 @@
         url("../fonts/LatinaEssential-MediumIt.woff") format("woff"),
         url("../fonts/LatinaEssential-MediumIt.woff2") format("woff2");
 }
+
+@font-face {
+    font-family: "JetBrains";
+    font-weight: 800;
+    src: url("../fonts/JetBrainsMono-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains";
+    font-weight: 800;
+    font-style: italic;
+    src: url("../fonts/JetBrainsMono-ExtraBold-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains";
+    font-weight: 400;
+    font-style: italic;
+    src: url("../fonts/JetBrainsMono-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains";
+    font-weight: 400;
+    src: url("../fonts/JetBrainsMono-Regular.ttf") format("truetype");
+}
