@@ -1,6 +1,5 @@
 import React from "react"
 import NavBar from "./nav-bar"
-import "./layout.css";
 import {Link} from "gatsby";
 
 const Layout = ({children}) => {
