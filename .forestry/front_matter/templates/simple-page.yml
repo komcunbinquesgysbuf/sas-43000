@@ -52,7 +52,7 @@ fields:
   config: {}
   label: Galerie
 pages:
-  - src/pages/beispiele/einfache-seite/de.md
-  - src/pages/beispiele/einfache-seite/en.md
-  - src/articles/beispiel-inhaltselement/de.md
-  - src/articles/beispiel-inhaltselement/en.md
+- src/articles/beispiel-inhaltselement/de.md
+- src/articles/beispiel-inhaltselement/en.md
+- src/pages/beispiele/einfache-seite/de.md
+- src/pages/beispiele/einfache-seite/en.md
