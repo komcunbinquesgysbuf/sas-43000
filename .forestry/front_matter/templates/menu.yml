@@ -32,7 +32,7 @@ fields:
   config:
     min: 
     max: 
-    labelField: file
+    labelField: page
   label: Einträge
 pages:
 - src/lists/nav.yml
