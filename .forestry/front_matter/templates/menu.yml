@@ -1,9 +1,9 @@
 ---
 label: Menü
 hide_body: true
-display_field: file
+display_field: page
 fields:
-- name: file
+- name: page
   type: select
   default: []
   config:
