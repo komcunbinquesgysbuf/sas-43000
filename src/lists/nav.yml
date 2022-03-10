@@ -2,6 +2,18 @@
 page: src/pages/en.md
 submenu:
 - page: src/pages/hello-world/en.md
+  title: ''
+  submenu: []
 - page: src/pages/hjkashasjd/en.md
+  title: ''
+  submenu: []
 - page: src/pages/test/en.md
+  title: ''
+  submenu: []
+- submenu: []
+  page: src/pages/tulwurb/en.md
+  title: ''
 - page: src/pages/news/first/de.md
+  title: ''
+  submenu: []
+title: ''
