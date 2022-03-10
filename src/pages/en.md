@@ -1,12 +1,12 @@
 ---
-title: main
+name: main
 image: "/media-t51ivd/gatsby-astronaut.png"
 sections:
 - template: image
   image: "/media-t51ivd/gatsby-icon.png"
   title: ''
 - template: include
-  file: src/articles/beispiel-inhaltselement.md
+  file: src/articles/beispiel-inhaltselement/en.md
 - template: section
   title: ksdfjkj
   subtitle: how the KSD got its Fjkj

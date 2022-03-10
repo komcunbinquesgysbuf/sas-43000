@@ -14,27 +14,28 @@ exports.createResolvers = ({createResolvers}) => {
             }));
             return isString ? (resolved[0] || null) : resolved;
         };
+    const resolveNav = (source, args, context, info) =>
+        source.page && context.nodeModel.findAll({
+            type: "File",
+            query: {
+                filter: {
+                    sourceInstanceName: {eq: `pages`},
+                    relativeDirectory: {eq: (source.page.replace(/^src\/pages\/|\/?[^\/]+$/g, '') || '')},
+                    extension: {eq: "md"}
+                }
+            }
+        }).then(r => r.entries);
     createResolvers({
-        MenuYaml: {
-            file: {type: "File!", resolve: makeFileResolver('pages', 'file', /^src\/pages\//)},
-        },
-        ListsYaml: {
-            file: {type: "File", resolve: makeFileResolver('pages', 'file', /^src\/pages\//)},
-        },
+        MenuYaml: {page: {type: "[File!]!", resolve: resolveNav}},
+        ListsYaml: {page: {type: "[File!]", resolve: resolveNav}},
         MarkdownRemarkFrontmatter: {
             image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/media-t51ivd\//)},
-            gallery: {
-                type: "[File!]",
-                resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)
-            },
+            gallery: {type: "[File!]", resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)},
         },
         MarkdownRemarkFrontmatterSections: {
             file: {type: "File", resolve: makeFileResolver('articles|pages', 'file', /^src\/(articles|pages)\//)},
             image: {type: "File", resolve: makeFileResolver('images', 'image', /^\/media-t51ivd\//)},
-            gallery: {
-                type: "[File!]",
-                resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)
-            },
+            gallery: {type: "[File!]", resolve: makeFileResolver('images', 'gallery', /^\/media-t51ivd\//)},
         },
     });
 };
@@ -42,12 +43,12 @@ exports.createSchemaCustomization = ({actions}) => {
     const {createTypes} = actions
     createTypes(`
         type MenuYaml {
-            file: File!
+            page: [File!]!
             title: String
             submenu: [MenuYaml!]
         }
         type ListsYaml implements Node {
-            file: File
+            page: [File!]
             submenu: [MenuYaml!]
         }
         type MarkdownRemarkFrontmatter {

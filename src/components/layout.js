@@ -50,7 +50,7 @@ const Footer = styled.footer`
     margin: 1rem;
 `;
 
-const Layout = ({children}) => {
+const Layout = ({children, currentLanguage, availableLanguages, currentPage}) => {
     return <>
         <GlobalStyle/>
         <Header>
@@ -59,7 +59,11 @@ const Layout = ({children}) => {
             </div>
             <div className="sitename-banner"></div>
             <div className="navigation-banner"></div>
-            <NavBar/>
+            <NavBar
+                currentLanguage={currentLanguage}
+                availableLanguages={availableLanguages}
+                currentPage={currentPage}
+            />
         </Header>
         <Main>
             <h1>#</h1>

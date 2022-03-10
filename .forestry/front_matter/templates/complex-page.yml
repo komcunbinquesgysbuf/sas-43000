@@ -1,7 +1,7 @@
 ---
 label: Komplexe Seite
 hide_body: true
-display_field: title
+display_field: name
 fields:
 - name: simple
   type: include
@@ -19,6 +19,9 @@ fields:
     min: 
     max: 
 pages:
-- src/pages/beispiele/komplexe-seite.md
-- src/pages/main.md
-- src/pages/news/first.md
+- src/pages/beispiele/komplexe-seite/de.md
+- src/pages/beispiele/komplexe-seite/en.md
+- src/pages/de.md
+- src/pages/en.md
+- src/pages/news/first/de.md
+- src/pages/news/first/en.md

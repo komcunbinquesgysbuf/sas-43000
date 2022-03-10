@@ -1,5 +1,5 @@
 ---
-title: Hello world
+name: Hello world
 image: "/media-t51ivd/gatsby-icon.png"
 isArticle: true
 author: Dave

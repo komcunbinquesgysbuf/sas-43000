@@ -1,6 +1,6 @@
 ---
 date: 2022-02-20
-title: Komplexe Seite
+name: Komplexe Seite
 subtitle: mit allen verfügbaren Feldern
 isArticle: true
 author: Bob

@@ -1,10 +1,10 @@
 ---
 label: Einfache Seite
 hide_body: false
-display_field: title
+display_field: name
 fields:
 - type: text
-  name: title
+  name: name
   label: Titel
 - name: subtitle
   type: text
@@ -52,5 +52,7 @@ fields:
   config: {}
   label: Galerie
 pages:
-  - src/pages/beispiele/einfache-seite.md
-  - src/articles/beispiel-inhaltselement.md
+  - src/pages/beispiele/einfache-seite/de.md
+  - src/pages/beispiele/einfache-seite/en.md
+  - src/articles/beispiel-inhaltselement/de.md
+  - src/articles/beispiel-inhaltselement/en.md

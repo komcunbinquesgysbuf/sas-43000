@@ -1,12 +1,12 @@
 import React from "react"
 import {graphql} from "gatsby";
-import Layout from "../../components/layout";
+import Layout from "../../../components/layout";
 import {unified} from "unified";
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
-import PageSection from "../../components/page-section";
-import Seo from "../../components/seo";
+import PageSection from "../../../components/page-section";
+import Seo from "../../../components/seo";
 
 const applyErrorTemplate = function (index, subtitle, before, code, after) {
     return (
@@ -22,9 +22,13 @@ const applyImageTemplate = function (index, frontmatter) {
 };
 const applyIncludeTemplate = function (index, file) {
     if (file) {
-        const {relativePath, childMarkdownRemark: {html, frontmatter}} = file;
+        const {relativeDirectory, sourceInstanceName, childMarkdownRemark: {html, frontmatter}} = file;
         return (
-            <PageSection key={index} className={`section-${index} include ${(slugify(relativePath))}`} {...frontmatter}>
+            <PageSection
+                key={index}
+                className={`section-${index} include ${sourceInstanceName} ${(slugify(relativeDirectory))}`}
+                {...frontmatter}
+            >
                 <div dangerouslySetInnerHTML={{__html: html}}/>
             </PageSection>
         );
@@ -46,11 +50,19 @@ const applySectionTemplate = function (index, frontmatter, content) {
 };
 const slugify = path => (path || '').replace(/\W+/g, '_').replace(/_/g, '-');
 
-const Template = ({data}) => {
-    const {markdownRemark: {frontmatter: {sections, ...frontmatter}, html, parent: {relativePath}}} = data
-    const className = slugify(relativePath);
-    return <Layout>
-        <Seo title={frontmatter.title}/>
+const Template = ({data, params}) => {
+    const {
+        markdownRemark: {frontmatter: {sections, ...frontmatter}, html, parent: {relativeDirectory}},
+        allFile: {availableLanguages}
+    } = data
+    const className = slugify(relativeDirectory);
+    const language = params.parent__name;
+    return <Layout
+        currentLanguage={language}
+        availableLanguages={availableLanguages.map(l => l.code)}
+        currentPage={relativeDirectory}
+    >
+        <Seo title={frontmatter.title} lang={language}/>
         <PageSection className={className} {...frontmatter}>
             <div dangerouslySetInnerHTML={{__html: html}}/>
             {sections && <div className="subsections">
@@ -71,10 +83,10 @@ const Template = ({data}) => {
     </Layout>;
 };
 export const pageQuery = graphql`
-    query($id: String!) {
+    query($id: String! $parent__relativeDirectory: String!) {
         markdownRemark(id: { eq: $id }) {
             frontmatter {
-                title
+                title: name
                 subtitle
                 gallery { childImageSharp { gatsbyImageData } publicURL }
                 image { childImageSharp { gatsbyImageData } publicURL }
@@ -88,10 +100,11 @@ export const pageQuery = graphql`
                     gallery { childImageSharp { gatsbyImageData } publicURL }
                     image { childImageSharp { gatsbyImageData } publicURL }
                     file {
-                        relativePath
+                        relativeDirectory
+                        sourceInstanceName
                         childMarkdownRemark {
                             frontmatter {
-                                title
+                                title: name
                                 subtitle
                                 gallery { childImageSharp { gatsbyImageData } publicURL }
                                 image { childImageSharp { gatsbyImageData } publicURL }
@@ -106,7 +119,12 @@ export const pageQuery = graphql`
                 }
             }
             html
-            parent { ... on File { relativePath } }
+            parent { ... on File { relativeDirectory } }
+        }
+        allFile(filter: {relativeDirectory: {eq: $parent__relativeDirectory} extension: {eq: "md"}}) {
+            availableLanguages: nodes {
+                code: name
+            }
         }
     }
 `

@@ -1,6 +1,6 @@
 ---
 date: 2022-02-20
-title: Beispiel-Inhaltselement
+name: Beispiel-Inhaltselement
 subtitle: mit allen verfügbaren Feldern
 isArticle: true
 author: Alice

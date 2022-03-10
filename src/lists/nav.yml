@@ -1,7 +1,7 @@
 ---
-file: src/pages/main.md
+page: src/pages/en.md
 submenu:
-- file: src/pages/hello-world.md
-- file: src/pages/hjkashasjd.md
-- file: src/pages/test.md
-- file: src/pages/news/first.md
+- page: src/pages/hello-world/en.md
+- page: src/pages/hjkashasjd/en.md
+- page: src/pages/test/en.md
+- page: src/pages/news/first/de.md
