@@ -22,7 +22,7 @@ export default function NavBar({currentLanguage, availableLanguages, currentPage
     `)
     const itemTitle = (file) => file.childMarkdownRemark?.frontmatter.title || '';
     const itemLinkTitle = (item, file) => item.title || itemTitle(file);
-    const itemUrl = (file) => `/${currentLanguage}/${file.relativeDirectory}/`.replace(/\/+$/g, '/');
+    const itemUrl = (file) => `/${file.name}/${file.relativeDirectory}/`.replace(/\/+$/g, '/');
     const fileForCurrentLanguage = (pageFiles) => pageFiles.find(file => file.name === currentLanguage) || pageFiles[0];
     const homePageFile = fileForCurrentLanguage(childListsYaml.page);
     return <div className="navigation" role="navigation">
