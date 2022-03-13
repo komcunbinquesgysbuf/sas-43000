@@ -1,5 +1,54 @@
 import React from "react"
 import {graphql, Link, useStaticQuery} from "gatsby"
+import styled from "styled-components";
+
+const Nav = styled.nav``;
+const SkipToMain = styled.a.attrs(() => ({href: '#main'}))`
+    position: absolute; top: -2.5rem; left: 0; transition: top .4s ease; padding: .5rem 1rem; background-color: #fc9; border-bottom-right-radius: .5rem;
+    &:focus {
+        top: 0;
+    }
+`;
+const SkipToMenu = styled.a.attrs(() => ({href: '#menu'}))`
+    display: flex; flex-flow: column; justify-content: space-between; font-size: 0; width: 1rem; height: 1rem; transition: all .4s ease;
+    &:before, span, &:after {
+        content: ""; padding: .2rem 0 0 0; background-color: #000; color: #fff; border-radius: .2rem;
+    }
+    &:before {
+        border-top-left-radius: .5rem; border-top-right-radius: .5rem;
+    }
+    &:after {
+        border-bottom-left-radius: .5rem; border-bottom-right-radius: .5rem;
+    }
+    @media only screen and (min-width: 50rem) {
+        position: absolute; top: -2.5rem;
+    }
+`;
+const MenuList = styled.ul.attrs(() => ({role: 'menu'}))`
+    @supports selector(:focus-within) {
+        position: relative; left: -10rem; max-height: 0; margin: 0; transition: all .4s ease;
+        ${Nav}:focus-within > & {
+            left: 0; margin: 1rem 0; max-height: 12rem;
+        }
+    }
+    @media only screen and (min-width: 50rem) {
+        left: 0; max-height: 10rem; margin: 1rem 0; display: flex;
+        ${SkipToMain}:focus ~ & {
+            left: 10rem;
+        }
+    }
+`;
+const MenuItem = styled.li`
+    list-style: none; margin: 0 1rem .2rem 0; padding: .2rem .5rem;
+    @supports selector(:focus-within) {
+        ${Nav}:focus-within & {
+            background-color: #cf9;
+        }
+    }
+    @media only screen and (min-width: 50rem) {
+        background-color: #cf9;
+    }
+`;
 
 export default function NavBar({currentLanguage, availableLanguages, currentPage}) {
     const {file: {childListsYaml}} = useStaticQuery(graphql`
@@ -25,30 +74,30 @@ export default function NavBar({currentLanguage, availableLanguages, currentPage
     const itemUrl = (file) => `/${file.name}/${file.relativeDirectory}/`.replace(/\/+$/g, '/');
     const fileForCurrentLanguage = (pageFiles) => pageFiles.find(file => file.name === currentLanguage) || pageFiles[0];
     const homePageFile = fileForCurrentLanguage(childListsYaml.page);
-    return <div className="navigation" role="navigation">
-        <input type="checkbox" id="ckrh130vr00026686mnjl9jmw"/>
-        <label className="toggle-menu" htmlFor="ckrh130vr00026686mnjl9jmw">
-            <i className="one"></i>
-            <i className="two"></i>
-            <i className="three"></i>
-        </label>
-        <ul className="pages">
-            <li>
+    return <Nav>
+        <SkipToMain>skip to content</SkipToMain>
+        <SkipToMenu><span>skip to menu</span></SkipToMenu>
+        <MenuList className="pages">
+            <MenuItem>
                 <Link activeClassName='active' title={itemTitle(homePageFile)} to={itemUrl(homePageFile)}>
                     {itemLinkTitle(childListsYaml, homePageFile)}
                 </Link>
-            </li>
-            {(childListsYaml.submenu || []).map(item => {
-                const file = fileForCurrentLanguage(item.page);
-                return <li key={itemUrl(file)}>
-                    <Link activeClassName='active' title={itemTitle(file)} to={itemUrl(file)}>
-                        {itemLinkTitle(item, file)}
-                    </Link>
-                </li>
-            })}
-        </ul>
-        <ul className="other-languages">
-            {availableLanguages.map(l => <li key={l}><Link activeClassName='active' to={`/${l}/${currentPage}/`.replace(/\/+$/, '/')}>{l}</Link></li>)}
-        </ul>
-    </div>;
+            </MenuItem>
+            {(childListsYaml.submenu || []).map(item =>
+                (file => (
+                    <MenuItem key={itemUrl(file)}>
+                        <Link activeClassName='active' title={itemTitle(file)} to={itemUrl(file)}>
+                            {itemLinkTitle(item, file)}
+                        </Link>
+                    </MenuItem>
+                ))(fileForCurrentLanguage(item.page)))}
+        </MenuList>
+        <MenuList className="other-languages">
+            {availableLanguages.map(l => (
+                <MenuItem key={l}>
+                    <Link activeClassName='active' to={`/${l}/${currentPage}/`.replace(/\/+$/, '/')}>{l}</Link>
+                </MenuItem>
+            ))}
+        </MenuList>
+    </Nav>;
 }
