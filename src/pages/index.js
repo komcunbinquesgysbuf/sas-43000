@@ -1,7 +1,7 @@
 import React from "react"
-import {graphql, useStaticQuery} from "gatsby"
+import {graphql, navigate, useStaticQuery} from "gatsby"
 
-const Home = ({navigate}) => {
+const Home = () => {
     const defaultLang = (
         (typeof window === 'undefined' && 'en')
         || (window.navigator.languages && window.navigator.languages[0])
