@@ -5,9 +5,9 @@ import "../css/typography.css";
 import styled, {createGlobalStyle} from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    html { --ink: #222222; --paper: #eeeeee; --cyan: #00afc4 }
+    html { --cyan: #005f62 }
     * { margin: 0; padding: 0; border 0 none }
-    body { margin: 0 1rem; background-color: var(--paper); color: var(--ink); font-family: "Latina", sans-serif }
+    body { margin: 0 1rem; font-family: "Latina", sans-serif }
     pre, code { font-family: "JetBrains", monospace }
     blockquote, dl, figure, hr, menu, ol, p, pre, table, ul { margin: 1rem 0 }
     header, main, footer { margin: 1rem 0 }

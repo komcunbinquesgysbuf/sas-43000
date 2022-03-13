@@ -4,20 +4,26 @@ import styled from "styled-components";
 
 const Nav = styled.nav``;
 const SkipToMain = styled.a.attrs(() => ({href: '#main'}))`
-    position: absolute; top: -2.5rem; left: 0; transition: top .4s ease; padding: .5rem 1rem; background-color: #fc9; border-bottom-right-radius: .5rem;
+    position: absolute; top: -2.5rem; left: 0; transition: top .4s ease; padding: .5rem 1rem; background-color: var(--cyan); border-bottom-right-radius: .5rem;
+    && {
+        color: #fff;
+    }
     &:focus {
         top: 0;
     }
 `;
-const SkipToMenu = styled.a.attrs(() => ({href: '#menu'}))`
-    display: flex; flex-flow: column; justify-content: space-between; font-size: 0; width: 1rem; height: 1rem; transition: all .4s ease;
-    &:before, span, &:after {
+const ShowMenuButton = styled.button.attrs(() => ({role: 'img', 'aria-label': 'show menu'}))`
+    display: flex; flex-flow: column; justify-content: space-between; font-size: 0; width: 1rem; height: 1rem; transition: all .4s ease; background-color: transparent;
+    &:hover, &:active, &:focus {
+        background-color: transparent;
+    }
+    &::before, span, &::after {
         content: ""; padding: .2rem 0 0 0; background-color: #000; color: #fff; border-radius: .2rem;
     }
-    &:before {
+    &::before {
         border-top-left-radius: .5rem; border-top-right-radius: .5rem;
     }
-    &:after {
+    &::after {
         border-bottom-left-radius: .5rem; border-bottom-right-radius: .5rem;
     }
     @media only screen and (min-width: 50rem) {
@@ -76,17 +82,17 @@ export default function NavBar({currentLanguage, availableLanguages, currentPage
     const homePageFile = fileForCurrentLanguage(childListsYaml.page);
     return <Nav>
         <SkipToMain>skip to content</SkipToMain>
-        <SkipToMenu><span role='img' aria-label='skip to menu'></span></SkipToMenu>
+        <ShowMenuButton onClick={_=>console.log(_)}><span></span></ShowMenuButton>
         <MenuList className="pages">
             <MenuItem>
-                <Link activeClassName='active' title={itemTitle(homePageFile)} to={itemUrl(homePageFile)}>
+                <Link activeClassName='active' to={itemUrl(homePageFile)}>
                     {itemLinkTitle(childListsYaml, homePageFile)}
                 </Link>
             </MenuItem>
             {(childListsYaml.submenu || []).map(item =>
                 (file => (
                     <MenuItem key={itemUrl(file)}>
-                        <Link activeClassName='active' title={itemTitle(file)} to={itemUrl(file)}>
+                        <Link activeClassName='active' to={itemUrl(file)}>
                             {itemLinkTitle(item, file)}
                         </Link>
                     </MenuItem>
