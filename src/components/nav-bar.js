@@ -46,14 +46,6 @@ const MenuList = styled.ul.attrs(() => ({role: 'menu'}))`
 `;
 const MenuItem = styled.li.attrs(() => ({role: 'menuitem'}))`
     list-style: none; margin: 0 1rem .2rem 0; padding: .2rem .5rem;
-    @supports selector(:focus-within) {
-        ${Nav}:focus-within & {
-            background-color: #fff;
-        }
-    }
-    @media only screen and (min-width: 50rem) {
-        background-color: #fff;
-    }
 `;
 
 export default function NavBar({currentLanguage, availableLanguages, currentPage}) {
