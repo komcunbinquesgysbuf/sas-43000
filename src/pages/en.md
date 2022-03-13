@@ -1,6 +1,6 @@
 ---
 name: main
-image: "/media-t51ivd/gatsby-astronaut.png"
+image: "/media-t51ivd/bionic-honeycomb.png"
 sections:
 - template: image
   image: "/media-t51ivd/gatsby-icon.png"
@@ -12,12 +12,14 @@ sections:
   subtitle: how the KSD got its Fjkj
   image: "/media-t51ivd/gatsby-astronaut.png"
   content: "    This is about testing"
-isArticle: true
+  gallery: []
+isArticle: false
 author: Charlotte
-date: '2022-02-18'
+date: 2022-02-18
+subtitle: ''
+gallery: []
 
 ---
-
 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
 äåéëþüúíóöáßðfghïœøæœ©®bñµÄÅÉËÞÜÚÍÓÖÁ§ÐFGHÏŒØÆŒ¢®BÑµ
 ff fi fl
