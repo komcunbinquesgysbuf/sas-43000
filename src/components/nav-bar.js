@@ -74,7 +74,7 @@ export default function NavBar({currentLanguage, availableLanguages, currentPage
     const homePageFile = fileForCurrentLanguage(childListsYaml.page);
     return <Nav>
         <SkipToMain>skip to content</SkipToMain>
-        <ShowMenuButton onClick={_=>console.log(_)}><span></span></ShowMenuButton>
+        <ShowMenuButton><span></span></ShowMenuButton>
         <MenuList className="pages">
             <MenuItem>
                 <Link activeClassName='active' to={itemUrl(homePageFile)}>
