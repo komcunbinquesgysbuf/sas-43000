@@ -12,9 +12,12 @@ sections:
   subtitle: how the KSD got its Fjkj
   image: "/media-t51ivd/gatsby-astronaut.png"
   content: "    This is about testing"
+  gallery: []
 isArticle: true
 author: Charlotte
-date: '2022-02-18'
+date: 2022-02-18
+subtitle: wir testen hier im InnoLabs
+gallery: []
 
 ---
 de
