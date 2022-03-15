@@ -1,10 +1,7 @@
 ---
 name: Start
-image: "/media-t51ivd/gatsby-astronaut.png"
+image: ''
 sections:
-- template: image
-  image: "/media-t51ivd/gatsby-icon.png"
-  title: ''
 - template: include
   file: src/articles/beispiel-inhaltselement/de.md
 - template: section
@@ -13,11 +10,21 @@ sections:
   image: "/media-t51ivd/gatsby-astronaut.png"
   content: "    This is about testing"
   gallery: []
+- template: section
+  title: Matthias, sag mal was...
+  subtitle: ich hier schreiben soll
+  content: sinnloser Text
+  image: ''
+  gallery: []
 isArticle: true
 author: Charlotte
 date: 2022-02-18
 subtitle: wir testen hier im InnoLabs
-gallery: []
+gallery:
+- "/media-t51ivd/floaty-gears.png"
+- "/media-t51ivd/marine-meadow.png"
+- "/media-t51ivd/mycelian-tracks.png"
+- "/media-t51ivd/reedy-vias.png"
 
 ---
 de
