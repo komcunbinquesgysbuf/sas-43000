@@ -1,0 +1,9 @@
+#!/bin/env sh
+pushd $(dirname $0)
+echo "caling NPM with $@..."
+npm $(
+    for a in "$@"; do \
+        printf '%q ' "$a"
+    done
+)
+popd
